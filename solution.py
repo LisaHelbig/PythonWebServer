@@ -6,7 +6,7 @@ def webServer(port=13331):
     serverSocket = socket(AF_INET, SOCK_STREAM)
 
     #Prepare a sever socket
-    serverSocket.bind(("", port))
+    serverSocket.bind((gethostbyname("localhost"), port))
     #Fill in start
     serverSocket.listen(5)
     #Fill in end
@@ -42,8 +42,8 @@ def webServer(port=13331):
             connectionSocket.close()
             #Fill in end
 
-    serverSocket.close()
-    sys.exit()  # Terminate the program after sending the corresponding data
+        serverSocket.close()
+        sys.exit()  # Terminate the program after sending the corresponding data
 
 if __name__ == "__main__":
     webServer(13331)
