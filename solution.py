@@ -27,7 +27,6 @@ def webServer(port=13331):
             connectionSocket.send("\r\n\r\n".encode())
             #Fill in end
 
-
             connectionSocket.sendall(outputdata.encode())
 
             connectionSocket.send("\r\n".encode())
