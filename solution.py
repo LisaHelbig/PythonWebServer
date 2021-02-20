@@ -30,7 +30,7 @@ def webServer(port=13331):
             connectionSocket.sendall(outputdata.encode())
 
             connectionSocket.send("\r\n".encode())
-            #connectionSocket.close()
+            connectionSocket.close()
         except IOError:
             #Send response message for file not found (404)
             #Fill in start
@@ -42,8 +42,8 @@ def webServer(port=13331):
             connectionSocket.close()
             #Fill in end
 
-        serverSocket.close()
-        sys.exit()  # Terminate the program after sending the corresponding data
+    serverSocket.close()
+    sys.exit()  # Terminate the program after sending the corresponding data
 
 if __name__ == "__main__":
     webServer(13331)
